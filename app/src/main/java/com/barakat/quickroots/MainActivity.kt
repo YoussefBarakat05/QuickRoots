@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnCalculate.setOnClickListener {
 
             try {
-                // ✅ قراءة معاملات المعادلة
                 val a = binding.etA.text.toString().toDouble()
                 val b = binding.etB.text.toString().toDouble()
                 val c = binding.etC.text.toString().toDouble()
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 var xU = binding.etXUpper.text.toString().toDouble()
                 val Es = binding.etStoppingError.text.toString().toDouble()
 
-                // ✅ تعريف الدالة باستخدام الـ coefficients
+
                 fun f(x: Double): Double {
                     return a * Math.pow(x, 5.0) +
                             b * Math.pow(x, 4.0) +
