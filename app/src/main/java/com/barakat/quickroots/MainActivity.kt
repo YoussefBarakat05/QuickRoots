@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 var xU = binding.etXUpper.text.toString().toDouble()
                 val Es = binding.etStoppingError.text.toString().toDouble()
 
-
+                // -- The function --
                 fun f(x: Double): Double {
                     return a * Math.pow(x, 5.0) +
                             b * Math.pow(x, 4.0) +
@@ -44,11 +44,13 @@ class MainActivity : AppCompatActivity() {
                             fConst
                 }
 
-
+                // -- The Range Checking --
                 if (f(xL) * f(xU) > 0) {
                     binding.tvResult.text = "❌ Invalid range! No root in this interval."
                     return@setOnClickListener
                 }
+
+
 
                 var xR_new: Double
                 var xR_old = 0.0
@@ -57,7 +59,8 @@ class MainActivity : AppCompatActivity() {
 
 
                 do {
-                    xR_new = (xL + xU) / 2.0
+                    xR_new = (xL + xU) / 2.0        // Calc Xr
+
 
                     if (!firstIter)
                         Ea = Math.abs((xR_new - xR_old) / xR_new)
